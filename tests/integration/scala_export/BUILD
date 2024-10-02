@@ -61,3 +61,16 @@ diff_test(
     file1 = ":test-pom",
     file2 = "pom.golden.xml",
 )
+
+sh_test(
+    name = "check-scaladocs-jar",
+    srcs = [
+        "check-scaladocs-jar.sh",
+    ],
+    data = [
+        ":test-scaladocs",
+    ],
+    deps = [
+        "@bazel_tools//tools/bash/runfiles",
+    ],
+)
